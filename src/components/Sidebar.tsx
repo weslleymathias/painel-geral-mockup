@@ -13,6 +13,7 @@ import {
 import { PageType } from '../App';
 import { Button } from './ui/button';
 import { cn } from './ui/utils';
+import logo from 'figma:asset/5f316cdefa96397254c8edcbdb44ccf364a5336d.png';
 
 interface SidebarProps {
   currentPage: PageType;
@@ -52,17 +53,20 @@ export function Sidebar({ currentPage, onNavigate, isOpen, onToggle }: SidebarPr
         )}
       >
         {/* Logo/Header */}
-        <div className="p-6 border-b border-gray-200">
+        <div className="p-6 border-b border-gray-200 bg-[#002B6B]">
           <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-emerald-600">AgriTech Pro</h2>
-              <p className="text-xs text-gray-500 mt-1">Gestão Inteligente</p>
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Piggia Logo" className="h-12 w-12" />
+              <div>
+                <h2 className="text-white">Piggia</h2>
+                <p className="text-xs text-[#5DC9E6] mt-1">Suinocultura Inteligente</p>
+              </div>
             </div>
             <Button
               variant="ghost"
               size="icon"
               onClick={onToggle}
-              className="lg:hidden"
+              className="lg:hidden text-white hover:bg-[#1462C0]"
             >
               <X className="h-5 w-5" />
             </Button>
@@ -88,7 +92,7 @@ export function Sidebar({ currentPage, onNavigate, isOpen, onToggle }: SidebarPr
                   className={cn(
                     "w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-left",
                     isActive
-                      ? "bg-emerald-50 text-emerald-600"
+                      ? "bg-[#B6E7F4] text-[#002B6B]"
                       : "text-gray-700 hover:bg-gray-50"
                   )}
                 >
@@ -102,12 +106,12 @@ export function Sidebar({ currentPage, onNavigate, isOpen, onToggle }: SidebarPr
 
         {/* Footer */}
         <div className="p-4 border-t border-gray-200">
-          <div className="bg-emerald-50 rounded-lg p-4">
-            <p className="text-xs text-emerald-800">
+          <div className="bg-[#B6E7F4] rounded-lg p-4">
+            <p className="text-xs text-[#002B6B]">
               Versão 2.0.1
             </p>
-            <p className="text-xs text-emerald-600 mt-1">
-              © 2025 AgriTech Pro
+            <p className="text-xs text-[#336699] mt-1">
+              © 2025 Piggia
             </p>
           </div>
         </div>

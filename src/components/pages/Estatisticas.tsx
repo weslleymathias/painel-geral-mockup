@@ -42,13 +42,13 @@ const utilizacaoData = [
 ];
 
 const distribuicaoData = [
-  { name: 'Maternidade', value: 45, color: '#ec4899' },
-  { name: 'Porcômetro', value: 230, color: '#3b82f6' },
-  { name: 'Pesagem', value: 180, color: '#a855f7' },
-  { name: 'Saúde Monitorada', value: 195, color: '#ef4444' },
-  { name: 'Realidade Aumentada', value: 12, color: '#6366f1' },
-  { name: 'Necropsia', value: 3, color: '#f97316' },
-  { name: 'Avaliação Corporal', value: 167, color: '#14b8a6' },
+  { name: 'Maternidade', value: 45, color: '#5DC9E6' },
+  { name: 'Porcômetro', value: 230, color: '#002B6B' },
+  { name: 'Pesagem', value: 180, color: '#1462C0' },
+  { name: 'Saúde Monitorada', value: 195, color: '#336699' },
+  { name: 'Realidade Aumentada', value: 12, color: '#B6E7F4' },
+  { name: 'Necropsia', value: 3, color: '#5DC9E6' },
+  { name: 'Avaliação Corporal', value: 167, color: '#1462C0' },
 ];
 
 const performanceData = [
@@ -92,10 +92,10 @@ export function Estatisticas() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Eficiência Média</CardDescription>
-            <CardTitle className="text-emerald-600">94.2%</CardTitle>
+            <CardTitle className="text-[#002B6B]">94.2%</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center gap-1 text-sm text-emerald-600">
+            <div className="flex items-center gap-1 text-sm text-[#002B6B]">
               <TrendingUp className="h-4 w-4" />
               <span>+2.1% vs. período anterior</span>
             </div>
@@ -105,10 +105,10 @@ export function Estatisticas() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Taxa de Utilização</CardDescription>
-            <CardTitle className="text-blue-600">87.3%</CardTitle>
+            <CardTitle className="text-[#5DC9E6]">87.3%</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center gap-1 text-sm text-blue-600">
+            <div className="flex items-center gap-1 text-sm text-[#5DC9E6]">
               <TrendingUp className="h-4 w-4" />
               <span>+5.2% vs. período anterior</span>
             </div>
@@ -118,10 +118,10 @@ export function Estatisticas() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Alertas Resolvidos</CardDescription>
-            <CardTitle className="text-purple-600">96%</CardTitle>
+            <CardTitle className="text-[#1462C0]">96%</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center gap-1 text-sm text-purple-600">
+            <div className="flex items-center gap-1 text-sm text-[#1462C0]">
               <TrendingUp className="h-4 w-4" />
               <span>+3.5% vs. período anterior</span>
             </div>
@@ -131,10 +131,10 @@ export function Estatisticas() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Tempo Médio Resposta</CardDescription>
-            <CardTitle className="text-orange-600">2.3h</CardTitle>
+            <CardTitle className="text-[#336699]">2.3h</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center gap-1 text-sm text-emerald-600">
+            <div className="flex items-center gap-1 text-sm text-[#002B6B]">
               <TrendingDown className="h-4 w-4" />
               <span>-15% vs. período anterior</span>
             </div>
@@ -172,24 +172,24 @@ export function Estatisticas() {
                     type="monotone"
                     dataKey="maternidade"
                     stackId="1"
-                    stroke="#ec4899"
-                    fill="#ec4899"
+                    stroke="#5DC9E6"
+                    fill="#5DC9E6"
                     name="Maternidade"
                   />
                   <Area
                     type="monotone"
                     dataKey="pesagem"
                     stackId="1"
-                    stroke="#a855f7"
-                    fill="#a855f7"
+                    stroke="#1462C0"
+                    fill="#1462C0"
                     name="Pesagem"
                   />
                   <Area
                     type="monotone"
                     dataKey="saude"
                     stackId="1"
-                    stroke="#ef4444"
-                    fill="#ef4444"
+                    stroke="#002B6B"
+                    fill="#002B6B"
                     name="Saúde Monitorada"
                   />
                 </AreaChart>
@@ -215,7 +215,7 @@ export function Estatisticas() {
                   <YAxis />
                   <Tooltip />
                   <Legend />
-                  <Bar dataKey="valor" fill="#10b981" name="Utilização (%)" />
+                  <Bar dataKey="valor" fill="#002B6B" name="Utilização (%)" />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>
@@ -317,7 +317,7 @@ export function Estatisticas() {
                     yAxisId="left"
                     type="monotone"
                     dataKey="eficiencia"
-                    stroke="#10b981"
+                    stroke="#002B6B"
                     strokeWidth={2}
                     name="Eficiência (%)"
                   />
@@ -325,7 +325,7 @@ export function Estatisticas() {
                     yAxisId="right"
                     type="monotone"
                     dataKey="alertas"
-                    stroke="#f97316"
+                    stroke="#5DC9E6"
                     strokeWidth={2}
                     name="Alertas"
                   />

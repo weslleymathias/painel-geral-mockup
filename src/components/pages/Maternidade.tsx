@@ -24,50 +24,50 @@ export function Maternidade() {
 
       {/* Stats Cards */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
+        <Card style={{ borderTop: '4px solid #F3CBD3' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Matrizes Ativas</CardTitle>
-            <Baby className="h-4 w-4 text-pink-500" />
+            <Baby className="h-4 w-4" style={{ color: '#F3CBD3' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-pink-600">45/50</div>
-            <Progress value={90} className="mt-2" />
+            <div style={{ color: '#990055' }}>45/50</div>
+            <Progress value={90} className="mt-2" style={{ backgroundColor: '#FBF1F3' }} />
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #F3CBD3' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Total de Leitões</CardTitle>
-            <Heart className="h-4 w-4 text-pink-500" />
+            <Heart className="h-4 w-4" style={{ color: '#F3CBD3' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-pink-600">523</div>
+            <div style={{ color: '#990055' }}>523</div>
             <p className="text-xs text-gray-500 mt-1">
               Média de 11.6 por matriz
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #F3CBD3' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Taxa de Sobrevivência</CardTitle>
-            <CheckCircle className="h-4 w-4 text-pink-500" />
+            <CheckCircle className="h-4 w-4" style={{ color: '#F3CBD3' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-pink-600">96.8%</div>
+            <div style={{ color: '#990055' }}>96.8%</div>
             <p className="text-xs text-gray-500 mt-1">
               +1.2% vs. mês anterior
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #Ff8359' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Alertas</CardTitle>
-            <AlertTriangle className="h-4 w-4 text-pink-500" />
+            <AlertTriangle className="h-4 w-4" style={{ color: '#Ff8359' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-orange-600">3</div>
+            <div style={{ color: '#990000' }}>3</div>
             <p className="text-xs text-gray-500 mt-1">
               Requer atenção
             </p>
@@ -105,12 +105,12 @@ export function Maternidade() {
                   <TableCell>
                     <Badge
                       variant="outline"
-                      className={
+                      style={
                         matriz.saude === 'Excelente'
-                          ? 'border-green-500 text-green-600'
+                          ? { borderColor: '#59AC83', color: '#006633' }
                           : matriz.saude === 'Bom'
-                          ? 'border-blue-500 text-blue-600'
-                          : 'border-orange-500 text-orange-600'
+                          ? { borderColor: '#428B94', color: '#143139' }
+                          : { borderColor: '#Ff8359', color: '#990000' }
                       }
                     >
                       {matriz.saude}
@@ -119,7 +119,7 @@ export function Maternidade() {
                   <TableCell>
                     <Badge
                       variant={matriz.status === 'Ativo' ? 'default' : 'destructive'}
-                      className={matriz.status === 'Ativo' ? 'bg-pink-500' : ''}
+                      style={matriz.status === 'Ativo' ? { backgroundColor: '#F3CBD3', color: '#990055' } : {}}
                     >
                       {matriz.status}
                     </Badge>

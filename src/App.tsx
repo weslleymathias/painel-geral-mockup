@@ -53,7 +53,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-slate-100">
       <Sidebar 
         currentPage={currentPage} 
         onNavigate={setCurrentPage}
@@ -64,7 +64,7 @@ export default function App() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
         
-        <main className="flex-1 overflow-y-auto p-6">
+        <main className="flex-1 overflow-y-auto p-6 bg-slate-50">
           {renderPage()}
         </main>
       </div>

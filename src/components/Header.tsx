@@ -22,40 +22,40 @@ export function Header({ onToggleSidebar }: HeaderProps) {
   // Dados mockados do usuário
   const user = {
     name: 'João Silva',
-    email: 'joao.silva@agritech.com',
+    email: 'joao.silva@piggia.com',
     role: 'Administrador',
     avatar: 'https://images.unsplash.com/photo-1701463387028-3947648f1337?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBhdmF0YXJ8ZW58MXx8fHwxNzYyOTI1NzA5fDA&ixlib=rb-4.1.0&q=80&w=1080'
   };
 
   return (
     <>
-      <header className="bg-white border-b border-gray-200 px-6 py-4">
+      <header className="bg-[#002B6B] border-b border-[#1462C0] px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
               size="icon"
               onClick={onToggleSidebar}
-              className="lg:hidden"
+              className="lg:hidden text-white hover:bg-[#1462C0]"
             >
               <Menu className="h-5 w-5" />
             </Button>
             
             <div>
-              <h1 className="text-gray-900">Sistema de Gestão Agropecuária</h1>
-              <p className="text-sm text-gray-500">Bem-vindo ao painel de controle</p>
+              <h1 className="text-white">Piggia - Suinocultura Inteligente</h1>
+              <p className="text-sm text-[#5DC9E6]">Bem-vindo ao painel de controle</p>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="flex items-center gap-3 hover:bg-gray-50 rounded-lg p-2 transition-colors">
+                <button className="flex items-center gap-3 hover:bg-[#1462C0] rounded-lg p-2 transition-colors">
                   <div className="text-right hidden sm:block">
-                    <p className="text-sm text-gray-900">{user.name}</p>
-                    <p className="text-xs text-gray-500">{user.role}</p>
+                    <p className="text-sm text-white">{user.name}</p>
+                    <p className="text-xs text-[#5DC9E6]">{user.role}</p>
                   </div>
-                  <Avatar className="h-10 w-10 border-2 border-emerald-500">
+                  <Avatar className="h-10 w-10 border-2 border-[#5DC9E6]">
                     <AvatarImage src={user.avatar} alt={user.name} />
                     <AvatarFallback>JS</AvatarFallback>
                   </Avatar>

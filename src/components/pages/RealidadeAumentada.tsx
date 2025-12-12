@@ -14,52 +14,52 @@ export function RealidadeAumentada() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
+        <Card style={{ borderTop: '4px solid #E6E4D2' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Dispositivos AR</CardTitle>
-            <Glasses className="h-4 w-4 text-indigo-500" />
+            <Glasses className="h-4 w-4" style={{ color: '#949384' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-indigo-600">12/15</div>
+            <div style={{ color: '#143139' }}>12/15</div>
             <p className="text-xs text-gray-500 mt-1">
               Ativos e conectados
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #E6E4D2' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Sessões Ativas</CardTitle>
-            <Scan className="h-4 w-4 text-indigo-500" />
+            <Scan className="h-4 w-4" style={{ color: '#949384' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-indigo-600">8</div>
+            <div style={{ color: '#143139' }}>8</div>
             <p className="text-xs text-gray-500 mt-1">
               Em uso no momento
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #E6E4D2' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Análises Hoje</CardTitle>
-            <Layers className="h-4 w-4 text-indigo-500" />
+            <Layers className="h-4 w-4" style={{ color: '#949384' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-indigo-600">47</div>
+            <div style={{ color: '#143139' }}>47</div>
             <p className="text-xs text-gray-500 mt-1">
               +12 vs. ontem
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #E6E4D2' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Tempo Médio</CardTitle>
-            <Smartphone className="h-4 w-4 text-indigo-500" />
+            <Smartphone className="h-4 w-4" style={{ color: '#949384' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-indigo-600">8.5 min</div>
+            <div style={{ color: '#143139' }}>8.5 min</div>
             <p className="text-xs text-gray-500 mt-1">
               Por sessão
             </p>
@@ -97,17 +97,17 @@ export function RealidadeAumentada() {
                   status: 'Ativo',
                 },
               ].map((func) => (
-                <div key={func.nome} className="flex items-start justify-between p-4 bg-gray-50 rounded-lg">
+                <div key={func.nome} className="flex items-start justify-between p-4 rounded-lg" style={{ backgroundColor: '#F2F1E8' }}>
                   <div className="flex-1">
                     <p className="text-gray-900">{func.nome}</p>
                     <p className="text-xs text-gray-500 mt-1">{func.descricao}</p>
                   </div>
                   <Badge
                     variant="outline"
-                    className={
+                    style={
                       func.status === 'Ativo'
-                        ? 'border-green-500 text-green-600'
-                        : 'border-blue-500 text-blue-600'
+                        ? { borderColor: '#59AC83', color: '#006633' }
+                        : { borderColor: '#428B94', color: '#143139' }
                     }
                   >
                     {func.status}
@@ -131,7 +131,7 @@ export function RealidadeAumentada() {
                 { usuario: 'Pedro Costa', funcao: 'Dados em Tempo Real', duracao: '15 min', hora: '12:10' },
                 { usuario: 'Maria Oliveira', funcao: 'Histórico 3D', duracao: '8 min', hora: '11:30' },
               ].map((sessao, index) => (
-                <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <div key={index} className="flex items-center justify-between p-4 rounded-lg" style={{ backgroundColor: '#F2F1E8' }}>
                   <div>
                     <p className="text-gray-900">{sessao.usuario}</p>
                     <p className="text-xs text-gray-500 mt-1">
@@ -155,13 +155,13 @@ export function RealidadeAumentada() {
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center justify-center py-8">
-            <Glasses className="h-16 w-16 text-indigo-500 mb-4" />
+            <Glasses className="h-16 w-16 mb-4" style={{ color: '#949384' }} />
             <p className="text-gray-700 mb-2">Dispositivos disponíveis: 4</p>
             <p className="text-sm text-gray-500 mb-6">
               Conecte seus óculos AR ou use o app mobile
             </p>
             <div className="flex gap-3">
-              <Button className="bg-indigo-600 hover:bg-indigo-700">
+              <Button style={{ backgroundColor: '#143139' }} className="hover:opacity-90">
                 Conectar Óculos AR
               </Button>
               <Button variant="outline">Usar App Mobile</Button>

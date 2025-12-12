@@ -14,50 +14,50 @@ export function Porcometro() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
+        <Card style={{ borderTop: '4px solid #99DDE1' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Animais Medidos</CardTitle>
-            <Ruler className="h-4 w-4 text-blue-500" />
+            <Ruler className="h-4 w-4" style={{ color: '#99DDE1' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-blue-600">230/250</div>
-            <Progress value={92} className="mt-2" />
+            <div style={{ color: '#428B94' }}>230/250</div>
+            <Progress value={92} className="mt-2" style={{ backgroundColor: '#D0F0F8' }} />
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #99DDE1' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Comprimento Médio</CardTitle>
-            <BarChart3 className="h-4 w-4 text-blue-500" />
+            <BarChart3 className="h-4 w-4" style={{ color: '#99DDE1' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-blue-600">142 cm</div>
+            <div style={{ color: '#428B94' }}>142 cm</div>
             <p className="text-xs text-gray-500 mt-1">
               Dentro do padrão
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #99DDE1' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Altura Média</CardTitle>
-            <Activity className="h-4 w-4 text-blue-500" />
+            <Activity className="h-4 w-4" style={{ color: '#99DDE1' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-blue-600">68 cm</div>
+            <div style={{ color: '#428B94' }}>68 cm</div>
             <p className="text-xs text-gray-500 mt-1">
               +2 cm vs. lote anterior
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #99DDE1' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Crescimento Semanal</CardTitle>
-            <TrendingUp className="h-4 w-4 text-blue-500" />
+            <TrendingUp className="h-4 w-4" style={{ color: '#99DDE1' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-blue-600">+3.2%</div>
+            <div style={{ color: '#428B94' }}>+3.2%</div>
             <p className="text-xs text-gray-500 mt-1">
               Acima da média
             </p>
@@ -79,7 +79,7 @@ export function Porcometro() {
                 { id: 'A228', comp: 138, alt: 66, peso: 92, status: 'Bom' },
                 { id: 'A227', comp: 142, alt: 68, peso: 96, status: 'Ótimo' },
               ].map((animal) => (
-                <div key={animal.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <div key={animal.id} className="flex items-center justify-between p-4 rounded-lg" style={{ backgroundColor: '#D0F0F8' }}>
                   <div>
                     <p className="text-gray-900">Animal {animal.id}</p>
                     <p className="text-xs text-gray-500 mt-1">
@@ -88,10 +88,10 @@ export function Porcometro() {
                   </div>
                   <Badge
                     variant="outline"
-                    className={
+                    style={
                       animal.status === 'Ótimo'
-                        ? 'border-green-500 text-green-600'
-                        : 'border-blue-500 text-blue-600'
+                        ? { borderColor: '#59AC83', color: '#006633' }
+                        : { borderColor: '#428B94', color: '#143139' }
                     }
                   >
                     {animal.status}
@@ -110,9 +110,9 @@ export function Porcometro() {
           <CardContent>
             <div className="space-y-4">
               {[
-                { categoria: 'Grande', quantidade: 78, cor: 'bg-green-500', percentual: 34 },
-                { categoria: 'Médio', quantidade: 112, cor: 'bg-blue-500', percentual: 49 },
-                { categoria: 'Pequeno', quantidade: 40, cor: 'bg-orange-500', percentual: 17 },
+                { categoria: 'Grande', quantidade: 78, cor: '#59AC83', percentual: 34 },
+                { categoria: 'Médio', quantidade: 112, cor: '#428B94', percentual: 49 },
+                { categoria: 'Pequeno', quantidade: 40, cor: '#Ff8359', percentual: 17 },
               ].map((cat) => (
                 <div key={cat.categoria} className="space-y-2">
                   <div className="flex items-center justify-between">
@@ -120,7 +120,7 @@ export function Porcometro() {
                     <span className="text-sm text-gray-900">{cat.quantidade} ({cat.percentual}%)</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className={`${cat.cor} h-2 rounded-full`} style={{ width: `${cat.percentual}%` }} />
+                    <div className="h-2 rounded-full" style={{ width: `${cat.percentual}%`, backgroundColor: cat.cor }} />
                   </div>
                 </div>
               ))}
