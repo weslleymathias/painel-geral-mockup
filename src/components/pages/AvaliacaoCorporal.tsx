@@ -14,50 +14,50 @@ export function AvaliacaoCorporal() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
+        <Card style={{ borderTop: '4px solid #428B94' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Avaliações Realizadas</CardTitle>
-            <ScanEye className="h-4 w-4 text-teal-500" />
+            <ScanEye className="h-4 w-4" style={{ color: '#428B94' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-teal-600">167/200</div>
-            <Progress value={83.5} className="mt-2" />
+            <div style={{ color: '#143139' }}>167/200</div>
+            <Progress value={83.5} className="mt-2" style={{ backgroundColor: '#D0F0F8' }} />
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #428B94' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Score Médio</CardTitle>
-            <Users className="h-4 w-4 text-teal-500" />
+            <Users className="h-4 w-4" style={{ color: '#428B94' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-teal-600">3.2/5</div>
+            <div style={{ color: '#143139' }}>3.2/5</div>
             <p className="text-xs text-gray-500 mt-1">
               Condição ideal
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #428B94' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Gordura Média</CardTitle>
-            <TrendingUp className="h-4 w-4 text-teal-500" />
+            <TrendingUp className="h-4 w-4" style={{ color: '#428B94' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-teal-600">18.5%</div>
+            <div style={{ color: '#143139' }}>18.5%</div>
             <p className="text-xs text-gray-500 mt-1">
               Dentro do padrão
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #428B94' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Análises Hoje</CardTitle>
-            <Camera className="h-4 w-4 text-teal-500" />
+            <Camera className="h-4 w-4" style={{ color: '#428B94' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-teal-600">23</div>
+            <div style={{ color: '#143139' }}>23</div>
             <p className="text-xs text-gray-500 mt-1">
               +5 vs. ontem
             </p>
@@ -74,11 +74,11 @@ export function AvaliacaoCorporal() {
           <CardContent>
             <div className="space-y-4">
               {[
-                { score: 'Score 1 (Muito magro)', quantidade: 8, cor: 'bg-red-500', percentual: 5 },
-                { score: 'Score 2 (Magro)', quantidade: 25, cor: 'bg-orange-500', percentual: 15 },
-                { score: 'Score 3 (Ideal)', quantidade: 92, cor: 'bg-green-500', percentual: 55 },
-                { score: 'Score 4 (Sobrepeso)', quantidade: 35, cor: 'bg-yellow-500', percentual: 21 },
-                { score: 'Score 5 (Obeso)', quantidade: 7, cor: 'bg-red-500', percentual: 4 },
+                { score: 'Score 1 (Muito magro)', quantidade: 8, cor: '#990000', percentual: 5 },
+                { score: 'Score 2 (Magro)', quantidade: 25, cor: '#Ff8359', percentual: 15 },
+                { score: 'Score 3 (Ideal)', quantidade: 92, cor: '#59AC83', percentual: 55 },
+                { score: 'Score 4 (Sobrepeso)', quantidade: 35, cor: '#9DE79D', percentual: 21 },
+                { score: 'Score 5 (Obeso)', quantidade: 7, cor: '#990000', percentual: 4 },
               ].map((item) => (
                 <div key={item.score} className="space-y-2">
                   <div className="flex items-center justify-between">
@@ -89,8 +89,8 @@ export function AvaliacaoCorporal() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className={`${item.cor} h-2 rounded-full`}
-                      style={{ width: `${item.percentual}%` }}
+                      className="h-2 rounded-full"
+                      style={{ width: `${item.percentual}%`, backgroundColor: item.cor }}
                     />
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export function AvaliacaoCorporal() {
                   <span className="text-sm text-gray-700">Músculo</span>
                   <span className="text-sm text-gray-900">58.5%</span>
                 </div>
-                <Progress value={58.5} className="h-2" />
+                <Progress value={58.5} className="h-2" style={{ backgroundColor: '#D0F0F8' }} />
                 <p className="text-xs text-gray-500 mt-1">Ideal: 55-60%</p>
               </div>
 
@@ -120,7 +120,7 @@ export function AvaliacaoCorporal() {
                   <span className="text-sm text-gray-700">Gordura</span>
                   <span className="text-sm text-gray-900">18.5%</span>
                 </div>
-                <Progress value={18.5} className="h-2" />
+                <Progress value={18.5} className="h-2" style={{ backgroundColor: '#D0F0F8' }} />
                 <p className="text-xs text-gray-500 mt-1">Ideal: 15-20%</p>
               </div>
 
@@ -129,7 +129,7 @@ export function AvaliacaoCorporal() {
                   <span className="text-sm text-gray-700">Ossos</span>
                   <span className="text-sm text-gray-900">15%</span>
                 </div>
-                <Progress value={15} className="h-2" />
+                <Progress value={15} className="h-2" style={{ backgroundColor: '#D0F0F8' }} />
                 <p className="text-xs text-gray-500 mt-1">Ideal: 14-16%</p>
               </div>
 
@@ -138,7 +138,7 @@ export function AvaliacaoCorporal() {
                   <span className="text-sm text-gray-700">Outros</span>
                   <span className="text-sm text-gray-900">8%</span>
                 </div>
-                <Progress value={8} className="h-2" />
+                <Progress value={8} className="h-2" style={{ backgroundColor: '#D0F0F8' }} />
                 <p className="text-xs text-gray-500 mt-1">Ideal: 7-10%</p>
               </div>
             </div>
@@ -160,7 +160,7 @@ export function AvaliacaoCorporal() {
               { id: 'A192', score: 2, musculo: 61, gordura: 13, status: 'Magro' },
               { id: 'A191', score: 3, musculo: 57, gordura: 19, status: 'Ideal' },
             ].map((avaliacao) => (
-              <div key={avaliacao.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+              <div key={avaliacao.id} className="flex items-center justify-between p-4 rounded-lg" style={{ backgroundColor: '#D0F0F8' }}>
                 <div className="flex items-center gap-4">
                   <div>
                     <p className="text-gray-900">Animal {avaliacao.id}</p>
@@ -171,12 +171,12 @@ export function AvaliacaoCorporal() {
                 </div>
                 <Badge
                   variant="outline"
-                  className={
+                  style={
                     avaliacao.status === 'Ideal'
-                      ? 'border-green-500 text-green-600'
+                      ? { borderColor: '#59AC83', color: '#006633' }
                       : avaliacao.status === 'Sobrepeso'
-                      ? 'border-yellow-500 text-yellow-600'
-                      : 'border-orange-500 text-orange-600'
+                      ? { borderColor: '#9DE79D', color: '#59AC83' }
+                      : { borderColor: '#Ff8359', color: '#990000' }
                   }
                 >
                   {avaliacao.status}

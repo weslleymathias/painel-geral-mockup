@@ -24,7 +24,7 @@ const products = [
     title: 'Maternidade',
     description: 'Gestão e monitoramento de matrizes e leitões',
     icon: Baby,
-    color: 'bg-pink-500',
+    color: '#F3CBD3',
     stats: { active: 45, total: 50 },
     status: 'active'
   },
@@ -33,7 +33,7 @@ const products = [
     title: 'Porcômetro',
     description: 'Medição precisa e análise dimensional',
     icon: Ruler,
-    color: 'bg-blue-500',
+    color: '#428B94',
     stats: { active: 230, total: 250 },
     status: 'active'
   },
@@ -42,7 +42,7 @@ const products = [
     title: 'Pesagem',
     description: 'Controle de peso e desenvolvimento',
     icon: Scale,
-    color: 'bg-purple-500',
+    color: '#59AC83',
     stats: { active: 180, total: 200 },
     status: 'active'
   },
@@ -51,7 +51,7 @@ const products = [
     title: 'Saúde Monitorada',
     description: 'Monitoramento contínuo de saúde',
     icon: HeartPulse,
-    color: 'bg-red-500',
+    color: '#Ff8359',
     stats: { active: 195, total: 200 },
     status: 'warning'
   },
@@ -60,7 +60,7 @@ const products = [
     title: 'Realidade Aumentada',
     description: 'Visualização e análise com AR',
     icon: Glasses,
-    color: 'bg-indigo-500',
+    color: '#949384',
     stats: { active: 12, total: 15 },
     status: 'active'
   },
@@ -69,7 +69,7 @@ const products = [
     title: 'Necropsia Inteligente',
     description: 'Análise post-mortem automatizada',
     icon: Microscope,
-    color: 'bg-orange-500',
+    color: '#990000',
     stats: { active: 3, total: 5 },
     status: 'active'
   },
@@ -78,7 +78,7 @@ const products = [
     title: 'Avaliação Corporal',
     description: 'Análise de condição corporal',
     icon: ScanEye,
-    color: 'bg-teal-500',
+    color: '#143139',
     stats: { active: 167, total: 200 },
     status: 'active'
   },
@@ -95,9 +95,9 @@ export function Dashboard({ onNavigate }: DashboardProps) {
             <Activity className="h-4 w-4 text-gray-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-emerald-600">1.245</div>
+            <div className="text-[#002B6B]">1.245</div>
             <p className="text-xs text-gray-500 mt-1">
-              <span className="text-emerald-600">+12%</span> vs. mês anterior
+              <span className="text-[#002B6B]">+12%</span> vs. mês anterior
             </p>
           </CardContent>
         </Card>
@@ -108,7 +108,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
             <TrendingUp className="h-4 w-4 text-gray-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-emerald-600">7/7</div>
+            <div className="text-[#002B6B]">7/7</div>
             <p className="text-xs text-gray-500 mt-1">
               Todos operacionais
             </p>
@@ -134,9 +134,9 @@ export function Dashboard({ onNavigate }: DashboardProps) {
             <TrendingUp className="h-4 w-4 text-gray-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-emerald-600">94.2%</div>
+            <div className="text-[#002B6B]">94.2%</div>
             <p className="text-xs text-gray-500 mt-1">
-              <span className="text-emerald-600">+2.1%</span> esta semana
+              <span className="text-[#002B6B]">+2.1%</span> esta semana
             </p>
           </CardContent>
         </Card>
@@ -164,7 +164,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
               >
                 <CardHeader>
                   <div className="flex items-start justify-between">
-                    <div className={`${product.color} p-3 rounded-lg text-white`}>
+                    <div className="p-3 rounded-lg text-white" style={{ backgroundColor: product.color }}>
                       <Icon className="h-6 w-6" />
                     </div>
                     {product.status === 'warning' && (
@@ -186,8 +186,8 @@ export function Dashboard({ onNavigate }: DashboardProps) {
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
                       <div
-                        className={`h-2 rounded-full ${product.color}`}
-                        style={{ width: `${utilizationPercent}%` }}
+                        className="h-2 rounded-full"
+                        style={{ width: `${utilizationPercent}%`, backgroundColor: product.color }}
                       />
                     </div>
                     <p className="text-xs text-gray-500">

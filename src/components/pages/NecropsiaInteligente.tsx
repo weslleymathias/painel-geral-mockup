@@ -14,52 +14,52 @@ export function NecropsiaInteligente() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
+        <Card style={{ borderTop: '4px solid #Ff8359' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Análises Realizadas</CardTitle>
-            <Microscope className="h-4 w-4 text-orange-500" />
+            <Microscope className="h-4 w-4" style={{ color: '#Ff8359' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-orange-600">3</div>
+            <div style={{ color: '#990000' }}>3</div>
             <p className="text-xs text-gray-500 mt-1">
               Este mês
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #59AC83' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Taxa de Mortalidade</CardTitle>
-            <TrendingDown className="h-4 w-4 text-orange-500" />
+            <TrendingDown className="h-4 w-4" style={{ color: '#59AC83' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-green-600">0.24%</div>
+            <div style={{ color: '#006633' }}>0.24%</div>
             <p className="text-xs text-gray-500 mt-1">
               -0.08% vs. mês anterior
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #Ff8359' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Diagnósticos IA</CardTitle>
-            <FileText className="h-4 w-4 text-orange-500" />
+            <FileText className="h-4 w-4" style={{ color: '#Ff8359' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-orange-600">3/3</div>
+            <div style={{ color: '#990000' }}>3/3</div>
             <p className="text-xs text-gray-500 mt-1">
               100% processados
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #FFCEB5' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Alertas Preventivos</CardTitle>
-            <AlertTriangle className="h-4 w-4 text-orange-500" />
+            <AlertTriangle className="h-4 w-4" style={{ color: '#FFCEB5' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-orange-600">2</div>
+            <div style={{ color: '#Ff8359' }}>2</div>
             <p className="text-xs text-gray-500 mt-1">
               Ações recomendadas
             </p>
@@ -109,7 +109,7 @@ export function NecropsiaInteligente() {
                     <TableCell>{analise.id}</TableCell>
                     <TableCell>{analise.diagnostico}</TableCell>
                     <TableCell>
-                      <Badge variant="outline" className="border-green-500 text-green-600">
+                      <Badge variant="outline" style={{ borderColor: '#59AC83', color: '#006633' }}>
                         {analise.status}
                       </Badge>
                     </TableCell>
@@ -128,10 +128,10 @@ export function NecropsiaInteligente() {
           <CardContent>
             <div className="space-y-4">
               {[
-                { causa: 'Pneumonia bacteriana', quantidade: 8, cor: 'bg-red-500', percentual: 35 },
-                { causa: 'Septicemia', quantidade: 5, cor: 'bg-orange-500', percentual: 22 },
-                { causa: 'Causa natural', quantidade: 7, cor: 'bg-blue-500', percentual: 30 },
-                { causa: 'Outras', quantidade: 3, cor: 'bg-gray-500', percentual: 13 },
+                { causa: 'Pneumonia bacteriana', quantidade: 8, cor: '#990000', percentual: 35 },
+                { causa: 'Septicemia', quantidade: 5, cor: '#Ff8359', percentual: 22 },
+                { causa: 'Causa natural', quantidade: 7, cor: '#428B94', percentual: 30 },
+                { causa: 'Outras', quantidade: 3, cor: '#999999', percentual: 13 },
               ].map((causa) => (
                 <div key={causa.causa} className="space-y-2">
                   <div className="flex items-center justify-between">
@@ -142,8 +142,8 @@ export function NecropsiaInteligente() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className={`${causa.cor} h-2 rounded-full`}
-                      style={{ width: `${causa.percentual}%` }}
+                      className="h-2 rounded-full"
+                      style={{ width: `${causa.percentual}%`, backgroundColor: causa.cor }}
                     />
                   </div>
                 </div>
@@ -176,19 +176,21 @@ export function NecropsiaInteligente() {
                 prioridade: 'Média',
               },
             ].map((rec, index) => (
-              <div key={index} className="p-4 bg-orange-50 border border-orange-200 rounded-lg">
+              <div key={index} className="p-4 rounded-lg" style={{ backgroundColor: '#FFF4EE', borderLeft: '4px solid #Ff8359' }}>
                 <div className="flex items-start justify-between mb-2">
-                  <h4 className="text-orange-900">{rec.titulo}</h4>
+                  <h4 style={{ color: '#990000' }}>{rec.titulo}</h4>
                   <Badge
                     variant={rec.prioridade === 'Alta' ? 'destructive' : 'outline'}
-                    className={
-                      rec.prioridade === 'Média' ? 'border-orange-500 text-orange-600' : ''
+                    style={
+                      rec.prioridade === 'Alta'
+                        ? { backgroundColor: '#990000', color: '#ffffff' }
+                        : { borderColor: '#Ff8359', color: '#990000' }
                     }
                   >
                     {rec.prioridade}
                   </Badge>
                 </div>
-                <p className="text-sm text-orange-700">{rec.descricao}</p>
+                <p className="text-sm" style={{ color: '#990000' }}>{rec.descricao}</p>
               </div>
             ))}
           </div>

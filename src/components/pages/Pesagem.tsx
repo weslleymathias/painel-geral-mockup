@@ -14,50 +14,50 @@ export function Pesagem() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
+        <Card style={{ borderTop: '4px solid #9DE79D' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Animais Pesados</CardTitle>
-            <Scale className="h-4 w-4 text-purple-500" />
+            <Scale className="h-4 w-4" style={{ color: '#9DE79D' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-purple-600">180/200</div>
-            <Progress value={90} className="mt-2" />
+            <div style={{ color: '#59AC83' }}>180/200</div>
+            <Progress value={90} className="mt-2" style={{ backgroundColor: '#EDFBED' }} />
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #9DE79D' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Peso Médio</CardTitle>
-            <Target className="h-4 w-4 text-purple-500" />
+            <Target className="h-4 w-4" style={{ color: '#9DE79D' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-purple-600">95.4 kg</div>
+            <div style={{ color: '#59AC83' }}>95.4 kg</div>
             <p className="text-xs text-gray-500 mt-1">
               Meta: 100 kg
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #9DE79D' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Ganho Diário</CardTitle>
-            <TrendingUp className="h-4 w-4 text-purple-500" />
+            <TrendingUp className="h-4 w-4" style={{ color: '#9DE79D' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-purple-600">0.87 kg</div>
+            <div style={{ color: '#59AC83' }}>0.87 kg</div>
             <p className="text-xs text-gray-500 mt-1">
               Acima da média
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card style={{ borderTop: '4px solid #9DE79D' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm">Próxima Pesagem</CardTitle>
-            <Calendar className="h-4 w-4 text-purple-500" />
+            <Calendar className="h-4 w-4" style={{ color: '#9DE79D' }} />
           </CardHeader>
           <CardContent>
-            <div className="text-purple-600">Em 3 dias</div>
+            <div style={{ color: '#59AC83' }}>Em 3 dias</div>
             <p className="text-xs text-gray-500 mt-1">
               15 de Novembro
             </p>
@@ -79,7 +79,7 @@ export function Pesagem() {
                 { data: '04/Nov', peso: 90.1, ganho: 2.3, status: 'Bom' },
                 { data: '01/Nov', peso: 87.8, ganho: 2.6, status: 'Excelente' },
               ].map((registro) => (
-                <div key={registro.data} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <div key={registro.data} className="flex items-center justify-between p-4 rounded-lg" style={{ backgroundColor: '#EDFBED' }}>
                   <div>
                     <p className="text-gray-900">{registro.data}</p>
                     <p className="text-xs text-gray-500 mt-1">
@@ -88,14 +88,14 @@ export function Pesagem() {
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="text-right">
-                      <p className="text-purple-600">{registro.peso} kg</p>
+                      <p style={{ color: '#59AC83' }}>{registro.peso} kg</p>
                     </div>
                     <Badge
                       variant="outline"
-                      className={
+                      style={
                         registro.status === 'Excelente'
-                          ? 'border-green-500 text-green-600'
-                          : 'border-blue-500 text-blue-600'
+                          ? { borderColor: '#59AC83', color: '#006633' }
+                          : { borderColor: '#9DE79D', color: '#59AC83' }
                       }
                     >
                       {registro.status}
@@ -115,10 +115,10 @@ export function Pesagem() {
           <CardContent>
             <div className="space-y-4">
               {[
-                { faixa: 'Acima de 100kg', quantidade: 42, cor: 'bg-green-500', percentual: 23 },
-                { faixa: '90-100kg', quantidade: 98, cor: 'bg-blue-500', percentual: 54 },
-                { faixa: '80-90kg', quantidade: 35, cor: 'bg-yellow-500', percentual: 20 },
-                { faixa: 'Abaixo de 80kg', quantidade: 5, cor: 'bg-orange-500', percentual: 3 },
+                { faixa: 'Acima de 100kg', quantidade: 42, cor: '#006633', percentual: 23 },
+                { faixa: '90-100kg', quantidade: 98, cor: '#59AC83', percentual: 54 },
+                { faixa: '80-90kg', quantidade: 35, cor: '#9DE79D', percentual: 20 },
+                { faixa: 'Abaixo de 80kg', quantidade: 5, cor: '#Ff8359', percentual: 3 },
               ].map((faixa) => (
                 <div key={faixa.faixa} className="space-y-2">
                   <div className="flex items-center justify-between">
@@ -126,7 +126,7 @@ export function Pesagem() {
                     <span className="text-sm text-gray-900">{faixa.quantidade} ({faixa.percentual}%)</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className={`${faixa.cor} h-2 rounded-full`} style={{ width: `${faixa.percentual}%` }} />
+                    <div className="h-2 rounded-full" style={{ width: `${faixa.percentual}%`, backgroundColor: faixa.cor }} />
                   </div>
                 </div>
               ))}

@@ -54,11 +54,11 @@ export function EditProfileDialog({ open, onOpenChange, user }: EditProfileDialo
           {/* Avatar Section */}
           <div className="flex flex-col items-center gap-4">
             <div className="relative">
-              <Avatar className="h-24 w-24 border-4 border-emerald-500">
+              <Avatar className="h-24 w-24 border-4 border-[#5DC9E6]">
                 <AvatarImage src={user.avatar} alt={user.name} />
                 <AvatarFallback>JS</AvatarFallback>
               </Avatar>
-              <button className="absolute bottom-0 right-0 bg-emerald-600 text-white p-2 rounded-full hover:bg-emerald-700 transition-colors">
+              <button className="absolute bottom-0 right-0 bg-[#002B6B] text-white p-2 rounded-full hover:bg-[#1462C0] transition-colors">
                 <Camera className="h-4 w-4" />
               </button>
             </div>
@@ -110,7 +110,7 @@ export function EditProfileDialog({ open, onOpenChange, user }: EditProfileDialo
           <Button variant="outline" onClick={() => onOpenChange(false)}>
             Cancelar
           </Button>
-          <Button onClick={handleSave} className="bg-emerald-600 hover:bg-emerald-700">
+          <Button onClick={handleSave} className="bg-[#002B6B] hover:bg-[#1462C0]">
             Salvar Alterações
           </Button>
         </DialogFooter>
